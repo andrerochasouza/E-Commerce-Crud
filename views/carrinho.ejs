@@ -1,0 +1,36 @@
+
+<%- include('partials/head') %>
+
+
+<body>
+    <%- include('partials/navegacao') %>
+
+    <main>
+        <% if (prods.length > 0) { %>
+        <div class="grid" style="padding: 3rem;">
+            <% for (prod of prods) { %>
+                <article class="card product">
+                        <header class="card-header">
+                            <h1 class="product-title"><%= prod.nomeAula %></h1>
+                        </header>
+                        <div class="card-image">
+                            <img src="<%= prod.imageAula %>">
+                        </div>
+                        <div class="card-content">  
+                            <h2 class="product-price">R$ <%= prod.precoAula %></h2>
+                        </div>
+                        <div class="card-actions">
+                            <a href="/carrinho/retirar/<%= product.id %>" class="btn">Retirar do carrinho</a>
+                        </div>
+                    </article>
+                    <% } %>
+
+        </div>
+        <% } else { %>
+            <h1>Nenhuma aula no carrinho, por favor volte na pagina inicial!</h1>
+        <% } %>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+
+</html>

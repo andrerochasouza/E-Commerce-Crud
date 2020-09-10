@@ -1,0 +1,42 @@
+<footer class="footer" style="background-color: white;">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+              <p class="text-muted small mb-4 mb-lg-0">&copy; Escola Jovem Profissional 2019. Todos os Direitos Reservados.</p>
+              <p class="text-muted small mb-4 mb-lg-0">Desenvolvido por André da Rocha Souza</p>
+            </div>
+            <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item mr-3">
+                  <a href="https://www.facebook.com.br" target="_blank">
+                    <i class="fa fa-facebook fa-2x fa-fw"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+<script>
+        //Efeito transição
+        const target = document.querySelectorAll('[data-anime]');
+            const animationClass = 'animate';
+    
+            function animeScroll(){
+                const windowTop = window.pageYOffset + ((window.innerHeight * 3) / 4);
+                target.forEach(function(element){
+                    if((windowTop) > element.offsetTop) {
+                        element.classList.add(animationClass);
+                    }else{
+                        element.classList.remove(animationClass);
+                    }
+                })
+            }
+    
+            animeScroll();
+            window.addEventListener('scroll', function() {
+                animeScroll();
+            })
+            //Fim do efeito de transição
+        </script>

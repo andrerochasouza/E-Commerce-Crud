@@ -1,0 +1,31 @@
+<%- include('partials/head') %>
+
+
+<body>
+' <%- include('partials/navegacao') %>'
+    <main>
+
+        <form method="POST">
+                <div class="form-group">
+                  <label>Seu nome</label>
+                  <input type="name" name="name" class="form-control" placeholder="Seu nome">
+                </div>
+                <div class="form-group">
+                        <label>Seu email</label>
+                        <input type="email" name="email"  class="form-control" aria-describedby="emailHelp" placeholder="Seu email" minlength="6">
+                      </div>
+                <div class="form-group">
+                  <label>Sua senha</label>
+                  <input type="password" class="form-control" placeholder="Sua Senha" minlength="6">
+                </div>
+                <div class="form-group">
+                    <label>Sua nova senha</label>
+                    <input type="password" name="pass" class="form-control" placeholder="Seu novo nome">
+                </div>
+                <button type="submit" value="trocarSenha" class="btn btn-primary">Trocar senha</button>
+              </form>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+
+</html>

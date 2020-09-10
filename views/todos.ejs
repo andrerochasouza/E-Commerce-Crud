@@ -1,0 +1,55 @@
+
+<%- include('partials/head') %>
+
+
+<body>
+    <%- include('partials/navegacao') %>
+    <%- include('partials/carrosel') %>
+    <%- include('partials/grid') %>
+
+
+    <main>
+        <% if (prods.length > 0) { %>
+        <div class="grid" style="padding: 3rem;">
+            <% for (prod of prods) { %>
+                <article class="card product">
+                        <header class="card-header">
+                            <h1 class="product-title"><%= prod.nomeAula %></h1>
+                        </header>
+                        <div class="card-image">
+                            <img src="<%= prod.imageAula %>">
+                        </div>
+                        <div class="card-content">  
+                            <h2 class="product-price">R$ <%= prod.precoAula %></h2>
+                        </div>
+                        <div class="card-actions">
+
+                            <% if (!user) { %>
+
+                            <a href="/detalhar/<%= prod.id %>" class="btn">Detalhar aula</a>
+
+                            <% } else if (user && !user.isadmin) { %>
+
+                            <a href="/detalhar/<%= prod.id %>" class="btn">Detalhar aula</a>
+                            <a href="/carrinho/adicionar/<%= prod.id %>" class="btn">Comprar aula</a>
+
+                            <% } else if (user && user.isadmin) {%>
+
+                                <a href="/detalhar/<%= prod.id %>" class="btn">Detalhar aula</a>
+                                <a href="/carrinho/adicionar/<%= prod.id %>" class="btn">Comprar aula</a>
+                    
+                            <% } %>
+                        </div>
+                    </article>
+                    <% } %>
+
+        </div>
+        <% } else { %>
+            <h1>Nenhuma aula cadastrada, por favor ADMIN, adicione aulas para os clientes</h1>
+        <% } %>
+    </main>
+    <%- include('partials/googlemaps') %>
+    <%- include('partials/footer') %>
+</body>
+
+</html>

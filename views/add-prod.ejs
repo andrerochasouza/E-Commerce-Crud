@@ -1,0 +1,39 @@
+
+<%- include('partials/head') %>
+
+
+<body>
+
+    
+    <%- include('partials/navegacao') %>
+    
+
+    <main>
+
+        <form action="/admin/add-product" method="POST">
+            <div class="form-group">
+              <label for="nomeAula">Nome da Aula</label>
+              <input class="form-control" name="nomeAula" id="nomeAula" placeholder="Nome" minlength="3">
+            </div>
+            <div class="form-group">
+              <label for="materiaAula">Matéria da Aula</label>
+              <input class="form-control" name="materiaAula" id="materiaAula" placeholder="Matéria">
+            </div>
+            <div class="form-group">
+                <label for="professorAula">Professor que lesiona a aula</label>
+                <input class="form-control" name="professorAula" id="professorAula" placeholder="Professor" minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="precoAula">Preço da Aula</label>
+                <input type="number" class="form-control" name="precoAula" id="precoAula" placeholder="Preço">
+            </div>
+            <div class="form-group">
+              <label for="imageAula">URL da imagem sobre a Aula</label>
+              <input class="form-control" name="imageAula" id="imageAula" placeholder="Url da Imagem">
+            </div>
+            <button type="submit" class="btn btn-primary">Adicionar aula</button>
+          </form>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>

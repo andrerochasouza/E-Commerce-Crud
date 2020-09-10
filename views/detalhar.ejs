@@ -1,0 +1,35 @@
+<%- include('partials/head') %>
+
+
+<body>
+
+
+    <%- include('partials/navegacao') %>
+
+    <main>
+
+            <header class="card-header">
+                <h1 class="product-title"><%= product.nomeAula %></h1>
+            </header>
+            <div class="card-image" style="margin-top: 100px; height: 30rem; width: 100%;">
+                    <img src="<%= product.imageAula %>">
+                </div>
+            <div class="card-content">
+                <h2 class="product-price">R$ <%= product.precoAula %></h2>
+                <div>Descrição da aula: <p class="product-description"><%= product.materiaAula %></p></div>
+            </div>
+            <div class="card-actions">
+
+                    <% if (user && user.isadmin) {%>
+                        
+                        <a href="/admin/excluir/<%= product.id %>" ><button class="btn">Deletar aula</button></a>
+                        
+                    <% } %>
+                <a href="/" class="btn">Voltar</a>
+            </div>
+      
+    </main>
+    <%- include('partials/footer') %>
+</body>
+
+</html>

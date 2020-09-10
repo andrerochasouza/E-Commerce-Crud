@@ -1,0 +1,45 @@
+
+<%- include('partials/head') %>
+
+<body>
+
+    
+    <%- include('partials/navegacao') %>
+
+    <main>
+
+        <% if (locals.erro) { %>
+            <h2><%= erro %></h2>
+        <% } %>
+
+        <form action="/new-user-form" method="POST">
+                <div class="form-group">
+                  <label for="name">Nome</label>
+                  <input name="name" id="name"  class="form-control" placeholder="Seu nome" minlength="6">
+                  <small class="form-text text-muted">Coloque seu nome!</small>
+                </div>
+                <div class="form-group">
+                    <label for="cpf">CPF</label>
+                    <input name="cpf" id="cpf" class="form-control" placeholder="Seu CPF" minlength="11" maxlength="11">
+                    <small class="form-text text-muted">Coloque seu CPF!</small>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Seu Email" minlength="6">
+                    <small class="form-text text-muted">Coloque seu Email!</small>
+                </div>
+                <div class="form-group">
+                    <label for="pass">Senha</label>
+                    <input type="password" name="pass" id="pass" class="form-control" placeholder="Sua Senha" minlength="6">
+                    <small class="form-text text-muted">Coloque sua Senha!</small>
+                </div>
+                <button class="btn btn-primary">Cadastrar</button>
+                
+              </form>
+              <button class="btn"><a href='/login'>Voltar a página de Login</a></button>
+              
+
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>
